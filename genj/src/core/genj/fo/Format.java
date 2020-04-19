@@ -30,6 +30,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.ServiceLoader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -266,7 +267,8 @@ public abstract class Format {
     List<Format> list = new ArrayList<Format>(10);
     list.add(DEFAULT);
     
-    Iterator<Format> it = ServiceRegistry.lookupProviders(Format.class);
+    Iterator<Format> it = ServiceLoader.load(Format.class).iterator();
+    
     while (it.hasNext()) {
       try {
         Format f = (Format)it.next();
