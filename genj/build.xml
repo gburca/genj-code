@@ -118,11 +118,14 @@
       	
     <echo level="info">Generating version number</echo>
     	
-  	<exec failifexecutionfails="false" failonerror="true" executable="svnversion" spawn="false" dir="." outputproperty="revision">
-  	  <arg line="-n"/>
+  	<exec failifexecutionfails="false" failonerror="true" executable="git" spawn="false" dir="." outputproperty="revision">
+  	  <arg line="describe"/>
+      <arg line="--tags"/>
+      <arg line="--always"/>
+      <arg line="HEAD"/>
   	</exec>
 
-    <tstamp><format property="now" pattern="yyyy/MM/dd HH:mm:ss"/></tstamp>
+    <tstamp><format property="now" pattern="yyyy-MM-dd HH:mm:ss"/></tstamp>
 
     <loadproperties srcfile="build.properties"/>
 
