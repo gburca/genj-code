@@ -28,4 +28,4 @@ if [ ! -x "$JAVA" ]; then
 fi
 
 # run it 
-$JAVA -Xmx512m -Xms32m -Djava.net.preferIPv4Stack=true -jar run.jar $@
+$JAVA -Xmx512m -Xms32m -Djava.net.preferIPv4Stack=true --add-opens java.desktop/java.awt=ALL-UNNAMED -jar run.jar $@

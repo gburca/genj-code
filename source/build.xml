@@ -29,7 +29,7 @@
 
     <mkdir dir="./build/classes/core"/>
     <javac srcdir="src/core" destdir="./build/classes/core"
-    	target="1.5" debug="${javac.debug}" optimize="off" deprecation="on" encoding="ASCII">
+    	target="8" debug="${javac.debug}" optimize="off" deprecation="on" encoding="ASCII">
       <classpath refid="project.class.path"/>
     </javac>
 

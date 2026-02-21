@@ -29,7 +29,7 @@
 
     <ant dir="${genj}" target="compile.core"/>
 
-    <javac srcdir="src" destdir="build" debug="${javac.debug}" target="1.6" optimize="on" deprecation="on" encoding="ASCII">
+    <javac srcdir="src" destdir="build" debug="${javac.debug}" target="8" optimize="on" deprecation="on" encoding="ASCII">
       <classpath path="${genj}/build/classes/core" />
     </javac>
   </target>
